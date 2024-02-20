@@ -10,20 +10,27 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                // Replace with your repository URL
-                git 'https://github.com/mallasrinivas/Restapi-aws-project.git'
+                // Clean workspace before cloning (optional)
+                deleteDir()
+
+                // Clone the Git repository
+                git branch: 'main',
+                    url: 'https://github.com/mallasrinivas/Restapi-aws-project.git'
+
+                sh "ls -lart"
             }
         }
+
         
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh "docker login -u dockerusername -p password"
                     // Building Docker image from Dockerfile
                     sh "docker build -t ${env.IMAGE_NAME}:${env.IMAGE_TAG} ."
                     // Pushing Docker image to Docker Hub
-                    sh "docker login -u mallasrinivas -p yourdockerhubpassword"
                     sh "docker push ${env.IMAGE_NAME}:${env.IMAGE_TAG}"
                 }
             }
@@ -48,7 +55,7 @@ pipeline {
                     // A simple health check
                     // Adjust the sleep time as necessary based on your application startup time
                     sh 'sleep 5'
-                    sh "curl http://localhost:${env.APP_PORT}/"
+                    sh "curl http://43.205.198.220:${env.APP_PORT}/"
                 }
             }
         }
