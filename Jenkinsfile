@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Replace with your repository URL
-                git 'https://github.com/yourusername/your-flask-rest-api-repo.git'
+                git 'https://github.com/mallasrinivas/Restapi-aws-project.git'
             }
         }
         

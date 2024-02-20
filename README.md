@@ -21,7 +21,7 @@ A step-by-step series of examples that tell you how to get a development environ
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/your-flask-rest-api-repo.git
+   git clone https://github.com/mallasrinivas/Restapi-aws-project.git
    cd your-flask-rest-api-repo
    ```
 
