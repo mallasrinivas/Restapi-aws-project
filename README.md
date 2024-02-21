@@ -55,6 +55,7 @@ This project is set up with Jenkins for CI/CD. To deploy this application using 
 - [Flask](https://flask.palletsprojects.com/) - The web framework used
 - [Docker](https://www.docker.com/) - Containerization
 - [Jenkins](https://www.jenkins.io/) - Automation server for CI/CD
+![image](https://github.com/mallasrinivas/Restapi-aws-project/assets/90713944/dc55620f-8a63-42d5-a992-0212db9d5aee)
 
 ## License
 
